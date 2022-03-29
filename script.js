@@ -1,3 +1,15 @@
+const operandButton = document.getElementsByClassName("operand");
+const display = document.getElementById("display");
+let displayValue = 0;
+display.innerHTML = displayValue;
+// console.log(operandButton);
+for (let i = 0; i < operandButton.length; i++) {
+  operandButton[i].addEventListener("click", isClicked);
+}
+function isClicked() {
+  console.log("button is clicked!");
+}
+
 function add(a, b) {
   return a + b;
 }
@@ -22,11 +34,10 @@ function operate(operator, num1, num2) {
   } else if (operator === "*") {
     return multiply(num1, num2);
   } else if (operator === "/") {
-    return divide(num1, num2);
+    if (num2 === 0) {
+      return undefined;
+    } else {
+      return divide(num1, num2);
+    }
   }
 }
-
-console.log(operate("+", 8, 2));
-console.log(operate("-", 8, 2));
-console.log(operate("*", 8, 2));
-console.log(operate("/", 8, 2));
