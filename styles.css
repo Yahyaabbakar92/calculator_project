@@ -71,7 +71,10 @@ button {
 }
 
 .sign,
-.percent,
+.percent {
+  background-color: #bfbfbf;
+}
+
 .operand,
 .decimal {
   background-color: #e6e6e6;
