@@ -62,12 +62,36 @@ button {
   background-color: #e60000;
 }
 
+.clear:hover {
+  background-color: #b30000;
+}
+
+.clear:active {
+  background-color: #ff6666;
+}
+
 .operator {
   background-color: gold;
 }
 
+.operator:hover {
+  background-color: #ccad00;
+}
+
+.operator:active {
+  background-color: #ffec80;
+}
+
 .equals {
   background-color: #ffad33;
+}
+
+.equals:hover {
+  background-color: #e68a00;
+}
+
+.equals:active {
+  background-color: #ffcc80;
 }
 
 .sign,
@@ -75,7 +99,27 @@ button {
   background-color: #bfbfbf;
 }
 
+.sign:hover,
+.percent:hover {
+  background-color: #8c8c8c;
+}
+
+.sign:active,
+.percent:active {
+  background-color: #e6e6e6;
+}
+
 .operand,
 .decimal {
   background-color: #e6e6e6;
+}
+
+.operand:hover,
+.decimal:hover {
+  background-color: #bfbfbf;
+}
+
+.operand:active,
+.decimal:active {
+  background-color: #ffffff;
 }
