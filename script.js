@@ -21,6 +21,9 @@ for (let i = 0; i < operatorButton.length; i++) {
   operatorButton[i].addEventListener("click", operatorButtonIsClicked);
 }
 
+// The click event that calls the operate function
+equalsButton.addEventListener("click", operate);
+
 // The function that returns and displays the numbers
 function operandButtonIsClicked(e) {
   displayValue = display.textContent += e.target.value;
