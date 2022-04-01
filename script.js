@@ -5,8 +5,6 @@ const operatorButton = document.getElementsByClassName("operator");
 const operandButton = document.getElementsByClassName("operand");
 const display = document.getElementById("display");
 let displayValue;
-let operator;
-let solution;
 
 // The click event to clear the display
 clearButton.addEventListener("click", clearButtonIsClicked);
@@ -25,15 +23,17 @@ for (let i = 0; i < operatorButton.length; i++) {
 equalsButton.addEventListener("click", operate);
 
 // The function that returns and displays the numbers
-function operandButtonIsClicked(e) {
-  displayValue = display.textContent += e.target.value;
+function operandButtonIsClicked() {
+  displayValue = display.textContent += this.value;
   if (displayValue.length === 11) {
     for (let i = 0; i < operandButton.length; i++) {
       operandButton[i].disabled = true;
     }
   }
-  return displayValue;
+  let number = Number(displayValue);
+  return number;
 }
+let valueOfButton = operandButtonIsClicked;
 
 // The function that clears the numbers from the display
 function clearButtonIsClicked() {
@@ -41,9 +41,11 @@ function clearButtonIsClicked() {
 }
 
 // The function that returns an operator
-function operatorButtonIsClicked(e) {
-  return (operator = e.target.value);
+function operatorButtonIsClicked() {
+  let operator = this.value;
+  return operator;
 }
+let operatorSelected = operatorButtonIsClicked;
 
 // operation functions
 function add(a, b) {
@@ -63,17 +65,17 @@ function divide(a, b) {
 }
 
 function operate(operator, num1, num2) {
-  if (operator === "+") {
-    return add(num1, num2);
-  } else if (operator === "-") {
-    return subtract(num1, num2);
-  } else if (operator === "*") {
-    return multiply(num1, num2);
-  } else if (operator === "/") {
-    if (num2 === 0) {
-      return undefined;
-    } else {
-      return divide(num1, num2);
-    }
-  }
+  // if (operator === "+") {
+  //   return add(num1, num2);
+  // } else if (operator === "-") {
+  //   return subtract(num1, num2);
+  // } else if (operator === "*") {
+  //   return multiply(num1, num2);
+  // } else if (operator === "/") {
+  //   if (num2 === 0) {
+  //     return undefined;
+  //   } else {
+  //     return divide(num1, num2);
+  //   }
+  // }
 }
